@@ -1,6 +1,6 @@
 XRandom
 ---
-XOR-keccak256 random number generator implementation in Javascript and Solidity. `XRandom` is designed to be used for blockchain projects where randomness is needed.
+XOR-keccak256 random number generator implementation in Javascript and Solidity. `XRandom` is designed to be used for smart contracts where randomness is needed.
 
 # Design
 The seed of `XRandom` is computed as the XOR of all the inputs. The inputs are 32 bytes (a `uint256` in Solidity).
