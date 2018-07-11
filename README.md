@@ -7,7 +7,8 @@ The seed of `XRandom` is computed as the XOR of all the inputs. The inputs are 3
 
 The next random number is generated as the keccak-256 hash of the previous number. The generated randoms are all 32 bytes.
 
-# Javascript implementation
+# Implementations
+## Javascript
 ```javascript
 var XRandom = require('xrandom')
 // number, hex string, bignumber are all supported
@@ -17,5 +18,10 @@ var r1 = xrng.next()
 var r2 = xrng.next()
 ```
 
-# Solidity implementation
+## Solidity
 The contract written in Solidity is at `contracts/XRandom.sol`. It uses commit-reveal pattern.
+
+- XRandom.commit
+- XRandom.reveal
+- XRandom.next
+- XRandom.reset
