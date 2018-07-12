@@ -40,5 +40,10 @@ describe('XRandom', () => {
       const nextNum2Hex = eutil.keccak256(eutil.keccak256(eutil.setLengthLeft(42 ^ 1337 ^ 9001, 32))).toString('hex')
       assert.equal(rng.next().toString(16), nextNum2Hex)
     })
+    it('should allow exclusive upper bound in next', () => {
+      const rng = new XRandom([42, 1337, 9001])
+      const nextBounded = bignum.fromBuffer(eutil.keccak256(eutil.setLengthLeft(42 ^ 1337 ^ 9001, 32))).mod(20)
+      assert.equal(rng.next(20).toString(16), nextBounded.toString(16))
+    })
   })
 })

@@ -14,8 +14,8 @@ var XRandom = require('eth-xrandom')
 // number, hex string, bignumber are all supported
 var xrng = new XRandom([42, 1337, '0x2329'])
 // the random numbers generated are `bignum` objects
-var r1 = xrng.next()
-var r2 = xrng.next()
+var r1 = xrng.next() // get a random number anywhere between 0 and 2^256
+var r2 = xrng.next('0xbeef') // get a random number with exclusive upper bound
 ```
 
 ## Solidity
