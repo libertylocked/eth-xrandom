@@ -10,7 +10,7 @@ The next random number is generated as the keccak-256 hash of the previous numbe
 # Implementations
 ## Javascript
 ```javascript
-var XRandom = require('xrandom')
+var XRandom = require('eth-xrandom')
 // number, hex string, bignumber are all supported
 var xrng = new XRandom([42, 1337, '0x2329'])
 // the random numbers generated are `bignum` objects

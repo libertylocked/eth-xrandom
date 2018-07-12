@@ -1,5 +1,5 @@
 {
-  "name": "xrandom",
+  "name": "eth-xrandom",
   "version": "1.0.0",
   "description": "XOR-keccak256 random number generator",
   "main": "xrandom-js/index.js",
