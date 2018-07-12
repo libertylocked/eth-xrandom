@@ -2,9 +2,11 @@
   "name": "xrandom",
   "version": "1.0.0",
   "description": "XOR-keccak256 random number generator",
-  "main": "index.js",
+  "main": "xrandom-js/index.js",
   "scripts": {
-    "test": "mocha"
+    "testrpc": "ganache-cli -p 7545 -i 5777 -e 1000",
+    "test": "mocha test-js",
+    "test:sol": "truffle test test-sol/1_xrandom_test.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,10 @@
     "ethereumjs-util": "^5.2.0"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^5.1.0",
     "eslint-config-standard": "^12.0.0-alpha.0",
@@ -32,6 +38,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "ganache-cli": "^6.1.6",
     "mocha": "^5.2.0"
   }
 }

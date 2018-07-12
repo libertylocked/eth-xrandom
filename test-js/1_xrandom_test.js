@@ -1,7 +1,7 @@
 const assert = require('chai').assert
 const bignum = require('bignum')
 const eutil = require('ethereumjs-util')
-const XRandom = require('../index')
+const XRandom = require('../xrandom-js')
 
 describe('XRandom', () => {
   describe('constructor', () => {
