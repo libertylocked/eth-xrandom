@@ -5,6 +5,11 @@ const XRandom = require('../xrandom-js')
 
 describe('XRandom', () => {
   describe('constructor', () => {
+    it('should set seed to zero if no inputs', () => {
+      const rng = new XRandom()
+      assert.notEqual(rng.next().toNumber(), 0)
+      assert.equal(rng.seed.toNumber(), 0)
+    })
     it('should set the seed as xor of all the input numbers', () => {
       const rng = new XRandom([42, 1337, 9001])
       assert.equal(rng.seed.toNumber(), 42 ^ 1337 ^ 9001)
@@ -44,6 +49,20 @@ describe('XRandom', () => {
       const rng = new XRandom([42, 1337, 9001])
       const nextBounded = bignum.fromBuffer(eutil.keccak256(eutil.setLengthLeft(42 ^ 1337 ^ 9001, 32))).mod(20)
       assert.equal(rng.next(20).toString(16), nextBounded.toString(16))
+    })
+  })
+  describe('update', () => {
+    it('should update the seed to the xor of the inputs', () => {
+      const rng = new XRandom([42, 1337])
+      rng.update([9001])
+      assert.equal(rng.seed.toNumber(), 42 ^ 1337 ^ 9001)
+    })
+    it('should reset current and index after update', () => {
+      const rng = new XRandom([42, 1337])
+      rng.next()
+      rng.update([9001])
+      assert.equal(rng.current.toNumber(), 42 ^ 1337 ^ 9001)
+      assert.equal(rng.index, 0)
     })
   })
 })
