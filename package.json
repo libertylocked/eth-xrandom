@@ -1,6 +1,6 @@
 {
   "name": "eth-xrandom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "XOR-keccak256 random number generator",
   "main": "xrandom-js/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/libertylocked/xrandom.git"
+    "url": "git+https://github.com/libertylocked/eth-xrandom.git"
   },
   "keywords": [
     "ethereum",
@@ -19,9 +19,9 @@
   "author": "libertylocked",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/libertylocked/xrandom/issues"
+    "url": "https://github.com/libertylocked/eth-xrandom/issues"
   },
-  "homepage": "https://github.com/libertylocked/xrandom#readme",
+  "homepage": "https://github.com/libertylocked/eth-xrandom#readme",
   "dependencies": {
     "bignum": "^0.13.0",
     "ethereumjs-util": "^5.2.0"
